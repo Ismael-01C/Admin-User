@@ -21,7 +21,7 @@ async function cargarUsuarios(){
     let listadoHtml = '';
     for(let usuario of listaUsuarios){
         let btnActualizar = '<button type="button" class="btn btn-info">Actualizar</button>'
-        let btnEliminar = '<button type="button" class="btn btn-danger m-2">Eliminar</button>'
+        let btnEliminar = '<button type="button" class="btn btn-danger m-2">🗑️</button>'
 
         let usuarioHtml = '<tr><td>' + usuario.id
             + '</td><td>' + usuario.nombreCompleto + '</td><td>' + usuario.estado
@@ -31,4 +31,3 @@ async function cargarUsuarios(){
     }
     document.querySelector('#usuarios tbody').outerHTML = listadoHtml;
 }
-
