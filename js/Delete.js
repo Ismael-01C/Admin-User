@@ -1,4 +1,4 @@
-async function eliminarUsuario(id){
+async function deleteUser(id){
     if (!confirm("¿Desea eliminar este usuario?")){
         return;
     }

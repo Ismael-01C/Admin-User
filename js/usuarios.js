@@ -1,12 +1,11 @@
 $(document).ready(
     function(){
-        cargarUsuarios();
-        // $('#usuarios').DataTable();
+        loadUser();
     }
 );
 
 
-async function cargarUsuarios(){
+async function loadUser(){
     const options = {
         method: 'GET',
         headers: {
@@ -21,7 +20,7 @@ async function cargarUsuarios(){
     let listadoHtml = '';
     for(let usuario of listaUsuarios){
         let btnActualizarModal = `<button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#btnActualizar">✏️</button>`
-        let btnEliminar =`<button type="button" class="btn btn-outline-danger m-2" onclick="eliminarUsuario(` + `'` + usuario.id + `'`+`)">🗑️</button>`
+        let btnEliminar =`<button type="button" class="btn btn-outline-danger m-2" onclick="deleteUser(` + `'` + usuario.id + `'`+`)">🗑️</button>`
          let usuarioHtml = '<tr><td id="tdID" ' + usuario.id + '>' + usuario.id
             + '</td><td>' + usuario.nombreCompleto + '</td><td>' + usuario.estado
             + '</td><td>' + usuario.email + '</td><td>' + usuario.contrasenia

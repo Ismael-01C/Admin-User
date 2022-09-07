@@ -1,6 +1,6 @@
-document.getElementById("Login").addEventListener("click", loginAPI);
+document.getElementById("Login").addEventListener("click", login);
 
-async function loginAPI(){
+async function login(){
 
     const email = document.getElementById('EmailTxt').value;
     const password = document.getElementById('PasswordTxt').value;
