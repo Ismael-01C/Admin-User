@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+  <link rel="icon" href="/img/Titulo.png">
+  <link rel="stylesheet" href="/css/admin.css">
+  <title>Administrador</title>
+
+</head>
+
+<body background="/img/32016.jpg">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <img src="/img/logo.png" height="55" width="65" />
+      <a class="navbar-brand">Admin</a>
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#CrearUserModal">
+        ➕
+      </button>
+      <!-- Modal  Create User -->
+      <div class="modal fade" id="CrearUserModal" tabindex="-1" aria-labelledby="CrearUserModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="CrearUserModalLabel">
+                Nuevo Usuario
+              </h5>
+              <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <!-- Campos de Creacion de Usuario -->
+            <div class="modal-body">
+              <form class="col-9 mx-auto m-5">
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="NombreTxt">Nombre </label>
+                  <input type="text" id="NombreTxt" class="form-control" />
+                </div>
+                <br>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="EstadoTxt">Estado</label>
+                  <input type="text" id="EstadoTxt" class="form-control" />
+                </div>
+                <br>
+                <!-- Email -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="EmailTxt">Email</label>
+                  <input type="email" id="EmailTxt" class="form-control" />
+                </div>
+                <br>
+                <!-- Password -->
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="PasswordTxt">Contraseña</label>
+                  <input type="password" id="PasswordTxt" class="form-control" />
+                </div>
+                <br>
+                <!-- Campos de Creacion de Usuario -->
+            </div>
+            <div class="modal-footer">              
+              <button type="button" id="CreateUser" onclick="createUser()" class="btn btn-success">
+                Crear
+              </button>
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                Cerrar
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- Modal Create User -->
+
+  <!-- Modal Update User -->
+  <div class="modal fade" id="btnActualizar" tabindex="-1" aria-labelledby="actualizarModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="actualizarModalLabel">Editar Usuario</h5>
+          <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Campos de Actualizar de Usuario -->
+          <form class="col-9 mx-auto m-5">
+            <div class="form-outline mb-4">
+              <label class="form-label" for="NombreTxtUpdate">Nombre</label>
+              <input type="text" id="NombreTxtUpdate" class="form-control" />
+            </div>
+            <br>
+            <div class="form-outline mb-4">
+              <label class="form-label" for="EstadoTxtUpdate">Estado</label>
+              <input type="text" id="EstadoTxtUpdate" class="form-control" />
+            </div>
+            <br>
+            <!-- Email -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="EmailTxtUpdate">Email</label>
+              <input type="email" id="EmailTxtUpdate" class="form-control" />
+            </div>
+            <br>
+            <!-- Password -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="PasswordTxtUpdate">Contraseña</label>
+              <input type="password" id="PasswordTxtUpdate" class="form-control" />
+            </div>
+            <br>
+            <!-- Submit -->
+            
+          </form>
+        </div>
+         <!-- Campos de Actualizar de Usuario -->
+        <div class="modal-footer">
+          <button type="button" id="actualizar" class="btn btn-success"
+              onclick="getID()">Actualizar</button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Update User -->
+
+
+  <!-- Tabla de Usuarios -->
+  <div container>
+    <div class="col-9 px-5">
+      <div class="table-responsive py-2">
+        <table id="usuarios" class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">Estado</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contraseña</th>
+              <th scope="col">Acciones</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider"></tbody>
+        </table>
+      </div>
+    </div>
+    <!-- Tabla de Usuarios -->
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/Usuarios.js"></script>
+    <script src="/js/Create_Users.js"></script>
+    <script src="/js/Update_User.js"></script>
+    <script src="/js/Delete.js"></script>
+
+</body>
+
+</html>

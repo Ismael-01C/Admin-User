@@ -1,7 +1,7 @@
 $(document).ready(
     function(){
         cargarUsuarios();
-        $('#usuarios').DataTable();
+        // $('#usuarios').DataTable();
     }
 );
 
@@ -20,13 +20,12 @@ async function cargarUsuarios(){
 
     let listadoHtml = '';
     for(let usuario of listaUsuarios){
-        let btnActualizar = '<button type="button" class="btn btn-info">Actualizar</button>'
-        let btnEliminar = '<button type="button" class="btn btn-danger m-2">🗑️</button>'
-
-        let usuarioHtml = '<tr><td>' + usuario.id
+        let btnActualizarModal = `<button type="button" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#btnActualizar">✏️</button>`
+        let btnEliminar =`<button type="button" class="btn btn-outline-danger m-2" onclick="eliminarUsuario(` + `'` + usuario.id + `'`+`)">🗑️</button>`
+         let usuarioHtml = '<tr><td id="tdID" ' + usuario.id + '>' + usuario.id
             + '</td><td>' + usuario.nombreCompleto + '</td><td>' + usuario.estado
             + '</td><td>' + usuario.email + '</td><td>' + usuario.contrasenia
-            + '</td><td>'+ btnActualizar + btnEliminar +'</td></tr>';
+            + '</td><td>'+ btnActualizarModal + btnEliminar +'</td></tr>';
         listadoHtml += usuarioHtml;
     }
     document.querySelector('#usuarios tbody').outerHTML = listadoHtml;

@@ -27,7 +27,7 @@ async function loginAPI(){
         return;
     } else if(res.status == 200){
         alert("El usuario "+data.nombreCompleto+" ha iniciado sesion correctamente!")
-        window.location.href = 'html/usuarios.html'
+        window.location.href = 'html/Administracion.html'
     }
         
 }
